@@ -4,6 +4,7 @@
  */
 package Pi_Dao;
 
+import Pi_entities.Administrateur;
 import Pi_entities.Client;
 import Pi_entities.ResponsableAgence;
 import Pi_utils.MyConnection;
@@ -61,5 +62,25 @@ public class ClientDAO {
         
         
       }
-    
+        public List<Client> DisplayAllclient (){
+        List<Client> listeclient = new ArrayList<Client>(); 
+        String requete = "select * from client";
+        try {
+            Statement statement = (Statement) MyConnection.getInstance().createStatement();
+        ResultSet resultat = statement.executeQuery(requete);
+        while(resultat.next())
+        { 
+            Client client =new Client(); 
+        client.setLogin(resultat.getString(7)); 
+        
+        client.setPassword(resultat.getString(8));
+        listeclient.add(client); } return listeclient;
+        } 
+        catch (SQLException ex) {
+            //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex); 
+        System.out.println("erreur lors du chargement des admin "+ex.getMessage()); return null; 
+        } 
+    }
+       
+       
 }

@@ -9,6 +9,24 @@ package Pi_entities;
  * @author Naoufel
  */
 public class ResponsableAgence {
+    public String password;
+    public String emailAgence;
+
+    public String getEmailAgence() {
+        return emailAgence;
+    }
+
+    public void setEmailAgence(String emailAgence) {
+        this.emailAgence = emailAgence;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
     public String NomRes;
     public String PrenomRes;
     public String AdresseAg;

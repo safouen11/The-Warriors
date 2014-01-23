@@ -21,7 +21,7 @@ public class AdministrateurDAO {
         List<Administrateur> listeadmin = new ArrayList<Administrateur>(); 
         String requete = "select * from administrateur";
         try {
-            Statement statement = (Statement) MyConnection.getInstance() .createStatement();
+            Statement statement = (Statement) MyConnection.getInstance().createStatement();
         ResultSet resultat = statement.executeQuery(requete);
         while(resultat.next())
         { 

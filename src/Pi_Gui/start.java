@@ -26,42 +26,69 @@ public class start extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jBadmin = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jBclient = new javax.swing.JToggleButton();
+        jLabel5 = new javax.swing.JLabel();
+        jBresponsable = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 11, -1, -1));
 
-        jButton2.setText("s'authentifier");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jLabel3.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
+        jLabel3.setText("Authentification ");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, -1, 20));
+
+        jBadmin.setFont(new java.awt.Font("Century Schoolbook", 0, 48)); // NOI18N
+        jBadmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PI_Icone/vip.png"))); // NOI18N
+        jBadmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jBadminActionPerformed(evt);
             }
         });
+        getContentPane().add(jBadmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 190, 130));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(251, 251, 251)
-                .addComponent(jButton2)
-                .addContainerGap(1387, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(128, 128, 128)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(307, Short.MAX_VALUE))
-        );
+        jLabel1.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
+        jLabel1.setText("Nouveau Client ");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 140, 20));
+
+        jBclient.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PI_Icone/basic.png"))); // NOI18N
+        jBclient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBclientActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBclient, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 190, 140));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
+        jLabel5.setText("Nouvelle Agence ");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 180, 40));
+
+        jBresponsable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PI_Icone/moderator.png"))); // NOI18N
+        getContentPane().add(jBresponsable, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 180, 130));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PI_Icone/e2fb491815745fba7fd7b4246252af6726238c5b.jpg"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 800, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jBadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBadminActionPerformed
          Authentification G=new Authentification();
         G.setVisible(true);
         this.setVisible(false);    
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jBadminActionPerformed
+
+    private void jBclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBclientActionPerformed
+         authentification_client G=new authentification_client();
+        G.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jBclientActionPerformed
 
     /**
      * @param args the command line arguments
@@ -98,6 +125,13 @@ public class start extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jBadmin;
+    private javax.swing.JToggleButton jBclient;
+    private javax.swing.JButton jBresponsable;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }

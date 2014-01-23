@@ -4,6 +4,8 @@
  */
 package Pi_Gui;
 
+
+
 /**
  *
  * @author moka
@@ -26,12 +28,19 @@ public class homeadmin extends javax.swing.JFrame   {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu3 = new javax.swing.JMenu();
         jToolBar1 = new javax.swing.JToolBar();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jFchosser = new javax.swing.JFileChooser();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMsauvgarder = new javax.swing.JMenu();
         jMexit = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jMajouter = new javax.swing.JMenu();
@@ -41,33 +50,48 @@ public class homeadmin extends javax.swing.JFrame   {
         jMsupprimerclient = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
 
+        jMenu3.setText("jMenu3");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
+        setMaximumSize(new java.awt.Dimension(1000, 1000));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jToolBar1.setRollover(true);
+        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1883, 535, -1, -1));
 
         jFchosser.setBounds(0, 0, 606, 397);
         jDesktopPane1.add(jFchosser, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
+        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1883, 523, 0, 0));
+
+        jRadioButton1.setText("jRadioButton1");
+        getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+
+        jRadioButton2.setText("jRadioButton2");
+        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, -1, -1));
+
+        jRadioButton3.setText("jRadioButton3");
+        getContentPane().add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, -1, -1));
+
+        jButton1.setText("Generer statistiques");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PI_Icone/bkg-3_1.jpg"))); // NOI18N
+        jLabel2.setMaximumSize(new java.awt.Dimension(500, 500));
+        jLabel2.setMinimumSize(new java.awt.Dimension(500, 500));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 480));
+
+        jLabel1.setText("choisir type offre :");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 100, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 650, 270));
+
+        jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 51, 51), new java.awt.Color(0, 102, 102), new java.awt.Color(0, 51, 51), new java.awt.Color(0, 51, 51)));
+
         jMenu1.setText("home");
 
-        jMsauvgarder.setText("sauvgarder ");
-        jMsauvgarder.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jMsauvgarderStateChanged(evt);
-            }
-        });
-        jMsauvgarder.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jMsauvgarderItemStateChanged(evt);
-            }
-        });
-        jMsauvgarder.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMsauvgarderActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMsauvgarder);
-
+        jMexit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PI_Icone/Exit Icon.jpg"))); // NOI18N
         jMexit.setText("exit");
         jMexit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -80,6 +104,7 @@ public class homeadmin extends javax.swing.JFrame   {
 
         jMenu2.setText("gestion des comptes responsables");
 
+        jMajouter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PI_Icone/add.png"))); // NOI18N
         jMajouter.setText("ajouter");
         jMajouter.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -93,6 +118,7 @@ public class homeadmin extends javax.swing.JFrame   {
         });
         jMenu2.add(jMajouter);
 
+        jMmodifier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PI_Icone/images (2).jpg"))); // NOI18N
         jMmodifier.setText("modifier");
         jMmodifier.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -106,6 +132,7 @@ public class homeadmin extends javax.swing.JFrame   {
         });
         jMenu2.add(jMmodifier);
 
+        jMsupprimer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PI_Icone/supprimer.png"))); // NOI18N
         jMsupprimer.setText("supprimer");
         jMsupprimer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -137,31 +164,15 @@ public class homeadmin extends javax.swing.JFrame   {
         });
         jMenuBar1.add(jMsupprimerclient);
 
-        jMenu5.setText("Statistiques");
+        jMenu5.setText("Envoyer reclamation");
+        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu5MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(627, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(425, Short.MAX_VALUE))
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -208,24 +219,19 @@ public class homeadmin extends javax.swing.JFrame   {
         dispose();
     }//GEN-LAST:event_jMconsulterMouseClicked
 
-    private void jMsauvgarderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMsauvgarderActionPerformed
-      
-    }//GEN-LAST:event_jMsauvgarderActionPerformed
-
-    private void jMsauvgarderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jMsauvgarderStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMsauvgarderStateChanged
-
-    private void jMsauvgarderItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jMsauvgarderItemStateChanged
- 
-    }//GEN-LAST:event_jMsauvgarderItemStateChanged
-
     private void jMexitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMexitMouseClicked
          Authentification G=new Authentification();
         G.setVisible(true);
   this.setVisible(false);
    dispose();
     }//GEN-LAST:event_jMexitMouseClicked
+
+    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
+MailJframe G=new MailJframe();
+        G.setVisible(true);
+  this.setVisible(false);
+   dispose();
+    }//GEN-LAST:event_jMenu5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -263,19 +269,26 @@ public class homeadmin extends javax.swing.JFrame   {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JFileChooser jFchosser;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMajouter;
     private javax.swing.JMenu jMconsulter;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMexit;
     private javax.swing.JMenu jMmodifier;
-    private javax.swing.JMenu jMsauvgarder;
     private javax.swing.JMenu jMsupprimer;
     private javax.swing.JMenu jMsupprimerclient;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }

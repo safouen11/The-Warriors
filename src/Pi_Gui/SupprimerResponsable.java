@@ -44,8 +44,11 @@ public class SupprimerResponsable extends javax.swing.JFrame {
         DelfAgAdr = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         Idrespon = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         JbDelAgAnnul.setText("Annuler");
         JbDelAgAnnul.addActionListener(new java.awt.event.ActionListener() {
@@ -53,21 +56,29 @@ public class SupprimerResponsable extends javax.swing.JFrame {
                 JbDelAgAnnulActionPerformed(evt);
             }
         });
+        getContentPane().add(JbDelAgAnnul, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 251, 96, -1));
 
         jLabel4.setText("Prenom Responsable Agence");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 110, -1));
 
         jLabel3.setText("Nom Responsable Agence");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 102, -1, -1));
 
         jLabel5.setText("Adresse Agence");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 178, 124, -1));
 
         jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 3, 18)); // NOI18N
         jLabel1.setText("Supprimer une  Agence");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 11, 269, -1));
 
         jLabel6.setText("Telephone Agence");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 216, -1, -1));
 
         DelResAgNam.setEditable(false);
+        getContentPane().add(DelResAgNam, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 99, 83, -1));
 
         DelfResAgPr.setEditable(false);
+        getContentPane().add(DelfResAgPr, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 137, 83, -1));
 
         JbDelAg.setText("Supprimer");
         JbDelAg.addActionListener(new java.awt.event.ActionListener() {
@@ -75,8 +86,10 @@ public class SupprimerResponsable extends javax.swing.JFrame {
                 JbDelAgActionPerformed(evt);
             }
         });
+        getContentPane().add(JbDelAg, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 251, -1, -1));
 
         DelfAgtel.setEditable(false);
+        getContentPane().add(DelfAgtel, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 213, 83, -1));
 
         jTable1.setModel(new RespAgenceController());
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -86,9 +99,13 @@ public class SupprimerResponsable extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(381, 99, 235, 175));
+
         DelfAgAdr.setEditable(false);
+        getContentPane().add(DelfAgAdr, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 175, 83, -1));
 
         jLabel2.setText("Id Responsable");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 74, -1, -1));
 
         Idrespon.setEditable(false);
         Idrespon.addActionListener(new java.awt.event.ActionListener() {
@@ -96,87 +113,10 @@ public class SupprimerResponsable extends javax.swing.JFrame {
                 IdresponActionPerformed(evt);
             }
         });
+        getContentPane().add(Idrespon, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 68, 83, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addGap(38, 38, 38))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel6)
-                                                .addGap(73, 73, 73)))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(DelfAgtel, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
-                                            .addComponent(DelResAgNam, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
-                                            .addComponent(DelfResAgPr, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
-                                            .addComponent(DelfAgAdr, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
-                                            .addComponent(Idrespon)))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(JbDelAg)
-                                .addGap(33, 33, 33)
-                                .addComponent(JbDelAgAnnul, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(126, 126, 126)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2)))
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel2))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Idrespon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(DelResAgNam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(DelfResAgPr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(DelfAgAdr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(DelfAgtel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(JbDelAg)
-                            .addComponent(JbDelAgAnnul))))
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PI_Icone/bkg-3_1.jpg"))); // NOI18N
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -230,8 +170,8 @@ jScrollPane1.setViewportView(jTable1);
 
     private void JbDelAgAnnulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JbDelAgAnnulActionPerformed
         // TODO add your handling code here:
-        GestionResponsableAgence g=new GestionResponsableAgence();
-        g.setVisible(true);
+         homeadmin G=new homeadmin();
+        G.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_JbDelAgAnnulActionPerformed
 
@@ -290,6 +230,7 @@ jScrollPane1.setViewportView(jTable1);
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

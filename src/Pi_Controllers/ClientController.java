@@ -5,9 +5,7 @@
 package Pi_Controllers;
 
 import Pi_Dao.ClientDAO;
-import Pi_Dao.RespDAO;
 import Pi_entities.Client;
-import Pi_entities.ResponsableAgence;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;

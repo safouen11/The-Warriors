@@ -20,13 +20,15 @@ import java.util.List;
 public class RespDAO {
      public void insertResp(ResponsableAgence ResA){
 
-        String requete = "insert into responsableagence (NomRes,PrenomRes,AdresseAgence,TelAgence) values (?,?,?,?)";
+        String requete = "insert into responsableagence (NomRes,PrenomRes,AdresseAgence,TelAgence,password,emailAgence) values (?,?,?,?,?,?)";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
             ps.setString(1, ResA.getNomRes());
             ps.setString(2, ResA.getPrenomRes());
             ps.setString(3, ResA.getAdresseAg());
             ps.setString(4, ResA.getTelAgence());
+            ps.setString(5, ResA.getPassword());
+            ps.setString(6, ResA.getEmailAgence());
             ps.executeUpdate();
             System.out.println("Ajout effectuée avec succès");
         } catch (SQLException ex) {
@@ -54,6 +56,7 @@ public class RespDAO {
                 resp.setPrenomRes(resultat.getString(3));
                 resp.setAdresseAg(resultat.getString(4));
                 resp.setTelAgence(resultat.getString(5));
+                resp.setPassword(resultat.getString(6));
 
                 respAg.add(resp);
             }

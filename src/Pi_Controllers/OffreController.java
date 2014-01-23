@@ -19,11 +19,17 @@ import javax.swing.table.AbstractTableModel;
 public class OffreController extends AbstractTableModel {
      String[] headers={"Id","NomOffre","Date","Desc","VilleD"};
      List<Proposition> listPrp=new ArrayList<Proposition>();
-
+     private String d;
     public OffreController() {
         OffreDAO offreDao=new OffreDAO();
         listPrp=offreDao.DisplayAllProposition();
         
+    }
+
+    public OffreController(String d) {
+        this.d = d;
+        OffreDAO offreDao=new OffreDAO();
+        listPrp =offreDao.DisplayAllOffre(d);
     }
 
 

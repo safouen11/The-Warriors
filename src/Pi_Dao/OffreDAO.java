@@ -18,6 +18,38 @@ import java.util.List;
  * @author Naoufel
  */
 public class OffreDAO {
+    public List<Proposition> DisplayAllOffre (String typeOffre){
+
+
+        List<Proposition> offre = new ArrayList<Proposition>();
+
+        String requete = "select * from Offre where TypeOffre='"+typeOffre+"'";
+        try {
+           Statement statement = (Statement) MyConnection.getInstance()
+                   .createStatement();
+            ResultSet resultat = statement.executeQuery(requete);
+            
+            while(resultat.next()){
+                Proposition off =new Proposition();
+                off.setId(resultat.getInt(1));
+                off.setNomOffre(resultat.getString(2));
+                off.setDateOffre(resultat.getString(3));
+                off.setDescriptionOffre(resultat.getString(4));
+                off.setVilleDepartOffre(resultat.getString(5));
+                off.setTypeOffre(resultat.getString(6));
+
+                offre.add(off);
+            }
+            return offre;
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors du chargement des stocks "+ex.getMessage());
+            return null;
+        }
+        
+        
+      }
+    
      public List<Proposition> DisplayAllProposition (){
 
 

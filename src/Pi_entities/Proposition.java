@@ -10,6 +10,15 @@ package Pi_entities;
  */
 public class Proposition {
     private int id;
+    private String TypeOffre;
+
+    public String getTypeOffre() {
+        return TypeOffre;
+    }
+
+    public void setTypeOffre(String TypeOffre) {
+        this.TypeOffre = TypeOffre;
+    }
 
     public String getDateOffre() {
         return DateOffre;
@@ -54,5 +63,14 @@ public class Proposition {
     private String DateOffre;
     private String DescriptionOffre;
     private String VilleDepartOffre;
+    private int Budget;
+
+    public int getBudget() {
+        return Budget;
+    }
+
+    public void setBudget(int Budget) {
+        this.Budget = Budget;
+    }
     
 }
