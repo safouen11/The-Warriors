@@ -2,12 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Pi_entities;
+package Pi_Dao;
 
 /**
  *
  * @author Naoufel
  */
-public class ResponsableAgnece {
+public class OffreDAO {
     
 }

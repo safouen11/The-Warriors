@@ -3,11 +3,19 @@
  * and open the template in the editor.
  */
 package Pi_Gui;
+import Pi_Controllers.RespAgenceController;
+import Pi_Dao.RespDAO;
+import Pi_entities.ResponsableAgence;
+import Pi_utils.*;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 
 /**
  *
  * @author Naoufel
  */
+
 public class ModifierResponsable extends javax.swing.JFrame {
 
     /**
@@ -37,12 +45,19 @@ public class ModifierResponsable extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTRsp = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        IdRes = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         JbModifAgAnnul.setText("Annuler");
+        JbModifAgAnnul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JbModifAgAnnulActionPerformed(evt);
+            }
+        });
 
         JbModifAg.setText("Modifier Agence");
         JbModifAg.addActionListener(new java.awt.event.ActionListener() {
@@ -62,18 +77,22 @@ public class ModifierResponsable extends javax.swing.JFrame {
 
         jLabel4.setText("Prenom Responsable Agence");
 
-        jTRsp.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        jTable1.setModel(new RespAgenceController());
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
             }
-        ));
-        jScrollPane1.setViewportView(jTRsp);
+        });
+        jScrollPane2.setViewportView(jTable1);
+
+        jLabel2.setText("Id Responsable");
+
+        IdRes.setEditable(false);
+        IdRes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IdResActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,31 +116,38 @@ public class ModifierResponsable extends javax.swing.JFrame {
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel6)
                                                 .addGap(73, 73, 73)))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(ModifAgtel, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(ModifResAgNam, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(ModifResAgPr, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(ModifAgAdr, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(ModifAgtel, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+                                            .addComponent(ModifResAgNam, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+                                            .addComponent(ModifResAgPr, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+                                            .addComponent(ModifAgAdr, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+                                            .addComponent(IdRes)))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(38, 38, 38)
                                 .addComponent(JbModifAg)
                                 .addGap(39, 39, 39)
                                 .addComponent(JbModifAgAnnul, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(119, 119, 119)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(45, 45, 45)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(224, 224, 224)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(349, Short.MAX_VALUE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(58, 58, 58)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addGap(52, 52, 52)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(IdRes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
@@ -141,8 +167,9 @@ public class ModifierResponsable extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(JbModifAg)
-                            .addComponent(JbModifAgAnnul))))
-                .addContainerGap(59, Short.MAX_VALUE))
+                            .addComponent(JbModifAgAnnul)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -150,7 +177,71 @@ public class ModifierResponsable extends javax.swing.JFrame {
 
     private void JbModifAgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JbModifAgActionPerformed
         // TODO add your handling code here:
+        ResponsableAgence Resp=new ResponsableAgence();
+        int a;
+        a = Integer.parseInt(IdRes.getText()) ; 
+      Resp.setIdRes(a);  
+      Resp.setNomRes(ModifResAgNam.getText());
+      Resp.setPrenomRes(ModifResAgPr.getText());
+      Resp.setAdresseAg(ModifAgAdr.getText());
+      Resp.setTelAgence(ModifAgtel.getText());
+      
+      RespDAO respDao =new RespDAO();
+      respDao.updateResp(Resp);
+      JOptionPane.showMessageDialog(this, "Mis A jour effectué avec succés!");
+      ModifResAgNam.setText("");
+      ModifResAgPr.setText("");
+      ModifAgAdr.setText("");
+      ModifAgtel.setText("");
+      IdRes.setText("");
+      jTable1 = new javax.swing.JTable();
+
+        jTable1.setModel(new RespAgenceController());
+
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
+
+        jScrollPane2.setViewportView(jTable1);
+
     }//GEN-LAST:event_JbModifAgActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        int row = jTable1.getSelectedRow();
+        Object idrespo = jTable1.getValueAt(row, 0);
+        Object a = jTable1.getValueAt(row, 1);
+        Object b = jTable1.getValueAt(row, 2);
+        Object c = jTable1.getValueAt(row, 3);
+        Object d = jTable1.getValueAt(row, 4); 
+       
+        
+        
+            
+           
+           ModifResAgNam.setText(""+a);
+           ModifResAgPr.setText(""+b);
+           ModifAgAdr.setText(""+c);
+           ModifAgtel.setText(""+d);
+           IdRes.setText(""+idrespo);
+           
+           
+        
+            
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void IdResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdResActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IdResActionPerformed
+
+    private void JbModifAgAnnulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JbModifAgAnnulActionPerformed
+        // TODO add your handling code here:
+        GestionResponsableAgence G=new GestionResponsableAgence();
+        G.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_JbModifAgAnnulActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,6 +285,7 @@ public class ModifierResponsable extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField IdRes;
     private javax.swing.JButton JbModifAg;
     private javax.swing.JButton JbModifAgAnnul;
     private javax.swing.JTextField ModifAgAdr;
@@ -201,11 +293,12 @@ public class ModifierResponsable extends javax.swing.JFrame {
     private javax.swing.JTextField ModifResAgNam;
     private javax.swing.JTextField ModifResAgPr;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTRsp;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

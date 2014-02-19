@@ -4,6 +4,10 @@
  */
 package Pi_Gui;
 
+import Pi_Dao.RespDAO;
+import Pi_entities.ResponsableAgence;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Naoufel
@@ -58,8 +62,18 @@ public class AjouterResponsable extends javax.swing.JFrame {
         jLabel6.setText("Telephone Agence");
 
         JbAddAg.setText("Ajouter Agence");
+        JbAddAg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JbAddAgActionPerformed(evt);
+            }
+        });
 
         JbAddAgBack.setText("Retour");
+        JbAddAgBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JbAddAgBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,6 +144,26 @@ public class AjouterResponsable extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JbAddAgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JbAddAgActionPerformed
+        // TODO add your handling code here:
+      ResponsableAgence Resp=new ResponsableAgence();
+      Resp.setNomRes(ResAgNam.getText());
+      Resp.setPrenomRes(ResAgPr.getText());
+      Resp.setAdresseAg(AgAdr.getText());
+      Resp.setTelAgence(Agtel.getText());
+      
+      RespDAO respDao =new RespDAO();
+      respDao.insertResp(Resp);
+      JOptionPane.showMessageDialog(this, "AJout effectué avec succés!");
+    }//GEN-LAST:event_JbAddAgActionPerformed
+
+    private void JbAddAgBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JbAddAgBackActionPerformed
+        // TODO add your handling code here:
+        GestionResponsableAgence G=new GestionResponsableAgence();
+        G.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_JbAddAgBackActionPerformed
 
     /**
      * @param args the command line arguments

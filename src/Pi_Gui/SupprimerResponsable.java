@@ -3,6 +3,9 @@
  * and open the template in the editor.
  */
 package Pi_Gui;
+import Pi_Controllers.RespAgenceController;
+import Pi_Dao.RespDAO;
+import Pi_entities.ResponsableAgence;
 
 /**
  *
@@ -39,10 +42,17 @@ public class SupprimerResponsable extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         DelfAgAdr = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        Idrespon = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         JbDelAgAnnul.setText("Annuler");
+        JbDelAgAnnul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JbDelAgAnnulActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Prenom Responsable Agence");
 
@@ -55,25 +65,37 @@ public class SupprimerResponsable extends javax.swing.JFrame {
 
         jLabel6.setText("Telephone Agence");
 
-        JbDelAg.setText("Modifier Agence");
+        DelResAgNam.setEditable(false);
+
+        DelfResAgPr.setEditable(false);
+
+        JbDelAg.setText("Supprimer");
         JbDelAg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JbDelAgActionPerformed(evt);
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        DelfAgtel.setEditable(false);
+
+        jTable1.setModel(new RespAgenceController());
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
             }
-        ));
+        });
         jScrollPane1.setViewportView(jTable1);
+
+        DelfAgAdr.setEditable(false);
+
+        jLabel2.setText("Id Responsable");
+
+        Idrespon.setEditable(false);
+        Idrespon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IdresponActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,29 +119,40 @@ public class SupprimerResponsable extends javax.swing.JFrame {
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel6)
                                                 .addGap(73, 73, 73)))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(DelfAgtel, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(DelResAgNam, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(DelfResAgPr, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(DelfAgAdr, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(DelfAgtel, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+                                            .addComponent(DelResAgNam, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+                                            .addComponent(DelfResAgPr, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+                                            .addComponent(DelfAgAdr, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+                                            .addComponent(Idrespon)))))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(38, 38, 38)
+                                .addGap(44, 44, 44)
                                 .addComponent(JbDelAg)
-                                .addGap(39, 39, 39)
+                                .addGap(33, 33, 33)
                                 .addComponent(JbDelAgAnnul, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(126, 126, 126)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(111, 111, 111)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2)))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(58, 58, 58)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel2))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Idrespon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
@@ -142,7 +175,7 @@ public class SupprimerResponsable extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(JbDelAg)
                             .addComponent(JbDelAgAnnul))))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
@@ -150,7 +183,57 @@ public class SupprimerResponsable extends javax.swing.JFrame {
 
     private void JbDelAgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JbDelAgActionPerformed
         // TODO add your handling code here:
+        ResponsableAgence Resp=new ResponsableAgence();
+      int a=Integer.parseInt(Idrespon.getText());
+      
+         RespDAO respDao =new RespDAO();
+      respDao.deletResp(a);
+      jTable1 = new javax.swing.JTable();
+
+jTable1.setModel(new RespAgenceController());
+
+jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+    public void mouseClicked(java.awt.event.MouseEvent evt) {
+        jTable1MouseClicked(evt);
+    }
+});
+
+jScrollPane1.setViewportView(jTable1);
     }//GEN-LAST:event_JbDelAgActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+         int row = jTable1.getSelectedRow();
+        Object idrespo = jTable1.getValueAt(row, 0);
+        Object a = jTable1.getValueAt(row, 1);
+        Object b = jTable1.getValueAt(row, 2);
+        Object c = jTable1.getValueAt(row, 3);
+        Object d = jTable1.getValueAt(row, 4); 
+       
+        
+        
+            
+           
+           DelResAgNam.setText(""+a);
+           DelfResAgPr.setText(""+b);
+           DelfAgAdr.setText(""+c);
+           DelfAgtel.setText(""+d);
+           Idrespon.setText(""+idrespo);
+           
+           
+        
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void IdresponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdresponActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IdresponActionPerformed
+
+    private void JbDelAgAnnulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JbDelAgAnnulActionPerformed
+        // TODO add your handling code here:
+        GestionResponsableAgence g=new GestionResponsableAgence();
+        g.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_JbDelAgAnnulActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,9 +281,11 @@ public class SupprimerResponsable extends javax.swing.JFrame {
     private javax.swing.JTextField DelfAgAdr;
     private javax.swing.JTextField DelfAgtel;
     private javax.swing.JTextField DelfResAgPr;
+    private javax.swing.JTextField Idrespon;
     private javax.swing.JButton JbDelAg;
     private javax.swing.JButton JbDelAgAnnul;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

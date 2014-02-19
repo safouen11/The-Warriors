@@ -4,6 +4,9 @@
  */
 package Pi_Gui;
 
+import Pi_Dao.AdministrateurDAO;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Naoufel
@@ -48,6 +51,11 @@ public class Authentification extends javax.swing.JFrame {
         jLabel4.setText("Mot de Passe : ");
 
         jButton1.setText("Confirmer");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Sortir");
 
@@ -104,6 +112,27 @@ public class Authentification extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        AdministrateurDAO admin = new AdministrateurDAO(); 
+        
+       for (int i = 0; i < admin.DisplayAlladmin().size(); i++)
+       { 
+           if(admin.DisplayAlladmin().get(i).getLogin().equals(IdAuth.getText()) && admin.DisplayAlladmin().get(i).getPassword().equals(PassAuth.getText())) { 
+               System.out.print("dzdzd");
+               Menu m=new Menu();
+               this.setVisible(false);
+               m.setVisible(true);
+        } else
+           { 
+               
+               System.out.print("aaaa");
+           JOptionPane.showMessageDialog(this, "Login ou Mot de passe invalid!!!!");
+           IdAuth.setText("");
+           PassAuth.setText("");
+           } }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -164,11 +164,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Ajouter Agence"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JbAddAgActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="JbAddAgBack">
       <Properties>
         <Property name="text" type="java.lang.String" value="Retour"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JbAddAgBackActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

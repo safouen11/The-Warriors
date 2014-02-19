@@ -35,13 +35,18 @@ public class PageAcceuil extends javax.swing.JFrame {
         jLabel1.setText("Voyage à carte");
 
         JbMenuAcced.setText("Acceder");
+        JbMenuAcced.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JbMenuAccedActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(116, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -57,11 +62,18 @@ public class PageAcceuil extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(82, 82, 82)
                 .addComponent(JbMenuAcced)
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JbMenuAccedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JbMenuAccedActionPerformed
+        // TODO add your handling code here:
+        Menu m=new Menu();
+        m.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_JbMenuAccedActionPerformed
 
     /**
      * @param args the command line arguments
