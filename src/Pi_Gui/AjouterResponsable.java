@@ -49,6 +49,7 @@ public class AjouterResponsable extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setForeground(java.awt.Color.gray);
 
         jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 3, 18)); // NOI18N
         jLabel1.setText("Ajouter une Nouvelle Agence");
