@@ -227,10 +227,7 @@ public class homeadmin extends javax.swing.JFrame   {
     }//GEN-LAST:event_jMexitMouseClicked
 
     private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
-MailJframe G=new MailJframe();
-        G.setVisible(true);
-  this.setVisible(false);
-   dispose();
+
     }//GEN-LAST:event_jMenu5MouseClicked
 
     /**
