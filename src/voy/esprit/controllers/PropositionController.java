@@ -4,32 +4,34 @@
  */
 package voy.esprit.controllers;
 
-import voy.esprit.DAO.ClientDAO;
-import voy.esprit.DAO.RespDAO;
+import voy.esprit.DAO.OffreDAO;
+import voy.esprit.DAO.PropositionDAO;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
-import voy.esprit.entities.Client;
+import voy.esprit.entities.Proposition;
 
 /**
  *
  * @author Naoufel
  */
-public class ClientController extends AbstractTableModel {
-     String[] headers={"Id","Nom","Prenom","Adresse","email"};
-     List<Client> listCl=new ArrayList<Client>();
-
-    public ClientController() {
-        ClientDAO clientDao=new ClientDAO();
-        listCl=clientDao.DisplayAllClient();
+public class PropositionController extends AbstractTableModel {
+      String[] headers={"Id","NomOffre","Date","Desc","VilleD"};
+     List<Proposition> listPrp=new ArrayList<Proposition>();
+     private String d;
+    public PropositionController() {
+        PropositionDAO prpDao=new PropositionDAO();
+        listPrp=prpDao.DisplayAllProposition();
         
     }
+
+    
 
 
     public int getRowCount() {
 
-    return listCl.size();
+    return listPrp.size();
 
     }
 
@@ -43,15 +45,15 @@ public class ClientController extends AbstractTableModel {
         switch(columnIndex)
         {
              case 0:
-                return listCl.get(rowIndex).getIdCl();
+                return listPrp.get(rowIndex).getId();
             case 1:
-                return listCl.get(rowIndex).getNomCl();
+                return listPrp.get(rowIndex).getNomOffre();
             case 2:
-                return listCl.get(rowIndex).getPrenomCl();
+                return listPrp.get(rowIndex).getDateOffre();
             case 3:
-                return listCl.get(rowIndex).getAdresseCl();
+                return listPrp.get(rowIndex).getDescriptionOffre();
             case 4:
-                    return listCl.get(rowIndex).getEmailClient();
+                    return listPrp.get(rowIndex).getVilleDepartOffre();
                     default:
                         return null;
 
@@ -66,5 +68,6 @@ public class ClientController extends AbstractTableModel {
         return headers[column];
     }
 
+    
     
 }

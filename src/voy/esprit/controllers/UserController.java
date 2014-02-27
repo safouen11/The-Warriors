@@ -7,6 +7,7 @@ package voy.esprit.controllers;
 import voy.esprit.DAO.ClientDAO;
 import voy.esprit.DAO.RespDAO;
 
+import voy.esprit.entities.ResponsableAgence;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
@@ -16,20 +17,24 @@ import voy.esprit.entities.Client;
  *
  * @author Naoufel
  */
-public class ClientController extends AbstractTableModel {
+public class UserController extends AbstractTableModel {
      String[] headers={"Id","Nom","Prenom","Adresse","email"};
      List<Client> listCl=new ArrayList<Client>();
+     List<ResponsableAgence> listResp=new ArrayList<ResponsableAgence>();
 
-    public ClientController() {
+    public UserController() {
         ClientDAO clientDao=new ClientDAO();
         listCl=clientDao.DisplayAllClient();
+        RespDAO respDao= new RespDAO();
+        listResp =respDao.DisplayAllResp();
         
     }
 
 
     public int getRowCount() {
-
+    
     return listCl.size();
+    
 
     }
 

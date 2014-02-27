@@ -1,0 +1,67 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package voy.esprit.entities;
+
+/**
+ *
+ * @author Naoufel
+ */
+public class Proposition {
+    private int id;
+    private String TypeOffre;
+
+    public String getTypeOffre() {
+        return TypeOffre;
+    }
+
+    public void setTypeOffre(String TypeOffre) {
+        this.TypeOffre = TypeOffre;
+    }
+
+    public String getDateOffre() {
+        return DateOffre;
+    }
+
+    public void setDateOffre(String DateOffre) {
+        this.DateOffre = DateOffre;
+    }
+
+    public String getDescriptionOffre() {
+        return DescriptionOffre;
+    }
+
+    public void setDescriptionOffre(String DescriptionOffre) {
+        this.DescriptionOffre = DescriptionOffre;
+    }
+
+    public String getNomOffre() {
+        return NomOffre;
+    }
+
+    public void setNomOffre(String NomOffre) {
+        this.NomOffre = NomOffre;
+    }
+
+    public String getVilleDepartOffre() {
+        return VilleDepartOffre;
+    }
+
+    public void setVilleDepartOffre(String VilleDepartOffre) {
+        this.VilleDepartOffre = VilleDepartOffre;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    private String NomOffre;
+    private String DateOffre;
+    private String DescriptionOffre;
+    private String VilleDepartOffre;
+    
+}
